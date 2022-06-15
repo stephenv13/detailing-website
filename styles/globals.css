@@ -14,3 +14,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.site-name {
+  text-align: center;
+}
+
+.contact {
+  font-weight: bold;
+}
