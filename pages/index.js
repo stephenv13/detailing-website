@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {AppBar, Box, Toolbar, Typography, Button, Grid, useTheme, MobileStepper,Paper,Card,CardContent,} from '@mui/material'
+import {AppBar, Box, Toolbar, Typography, Button, Grid, useTheme, MobileStepper, Paper, Card, CardContent,} from '@mui/material'
 import {KeyboardArrowLeft, KeyboardArrowRight} from '@mui/icons-material';
 
 import logo from '/assets/car-logo.svg'
@@ -138,7 +138,7 @@ function Home() {
               <Typography variant='h1'>Contact Us</Typography>
               <Typography variant='p'>Questions? Concerns? We'd love to hear from you!</Typography>
 
-              <Grid container spacing={10} sx={{p: 10,}}>
+              <Grid container spacing={10} sx={{p: 5,}}>
                 <Grid item md={6}>
 
                   {/* EMAIL CARD */}
