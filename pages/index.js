@@ -1,21 +1,14 @@
 import * as React from 'react';
-import {AppBar, Box, Toolbar, Typography, Button, Grid} from '@mui/material'
+import {AppBar, Box, Toolbar, Typography, Button, Grid, useTheme, MobileStepper, Paper, Card, CardContent,} from '@mui/material'
+import {KeyboardArrowLeft, KeyboardArrowRight} from '@mui/icons-material';
 
 import logo from '/assets/car-logo.svg'
 import Image from 'next/dist/client/image';
 
-// photo stepper
-import { useTheme } from '@mui/material/styles';
-import MobileStepper from '@mui/material/MobileStepper';
-import Paper from '@mui/material/Paper';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import Container from '@mui/material/Container';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const images = [
@@ -145,57 +138,34 @@ function Home() {
               <Typography variant='h1'>Contact Us</Typography>
               <Typography variant='p'>Questions? Concerns? We'd love to hear from you!</Typography>
 
-              <Grid container spacing={3} sx={{p: 10,}}>
-                <Grid item xs={4}>
+              <Grid container spacing={10} sx={{p: 5,}}>
+                <Grid item md={6}>
 
                   {/* EMAIL CARD */}
                   <Card sx={{ minWidth: 275 }}>
                     <CardContent>
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Facebook</Typography>
-                      <Typography variant="body2">
-                        well meaning and kindly.
-                        <br />
-                        {'"a benevolent smile"'}
-                      </Typography>
+                      <EmailIcon sx={{fontSize: 75}}></EmailIcon>
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Email us at:</Typography>
+                      <Typography variant="p">example@gmail.com</Typography>
                     </CardContent>
                   </Card>
-
                 </Grid>
-                <Grid item xs={4}>
 
-                {/* EMAIL CARD */}
-                <Card sx={{ minWidth: 275 }}>
+                <Grid item xs={6}>
+
+                  {/* PHONE CARD */}
+                  <Card sx={{ minWidth: 275 }}>
                     <CardContent>
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Email</Typography>
-                      <Typography variant="body2">
-                        well meaning and kindly.
-                        <br />
-                        {'"a benevolent smile"'}
-                      </Typography>
+                      <PhoneIphoneIcon sx={{fontSize: 75,}}></PhoneIphoneIcon>
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Call or Text us at:</Typography>
+                      <Typography variant="p">(123)-456-7890</Typography>
                     </CardContent>
                   </Card>
-
-                </Grid>
-                <Grid item xs={4}>
-
-                {/* EMAIL CARD */}
-                <Card sx={{ minWidth: 275 }}>
-                    <CardContent>
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Phone</Typography>
-                      <Typography variant="body2">
-                        well meaning and kindly.
-                        <br />
-                        {'"a benevolent smile"'}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-
                 </Grid>
               </Grid>
-
             </Paper>
-
           </Box>
+
       </Box>
   );
 }
