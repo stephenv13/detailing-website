@@ -9,6 +9,9 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import LocalCarWashIcon from '@mui/icons-material/LocalCarWash';
+
+import Fade from 'react-reveal/Fade'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const images = [
@@ -131,6 +134,102 @@ function Home() {
             </Button>
           }
         />
+
+          {/* SERVICES */}
+          <Box sx={{flexGrow: 1, textAlign: 'center', mt: 10, p: 2}}>
+            <Paper>
+              <Typography variant='h1'>Services</Typography>
+              <Typography variant='p'>100% Satisfaction Guaranteed</Typography>
+
+              <Grid container spacing={10} sx={{p: 5,}}>
+                <Grid item xs={4}>
+
+                  {/* INTERNAL PACKAGE */}
+                  <Fade big delay={750}>
+                    <Card sx={{ minWidth: 275 }} elevation={10}>
+                      <CardContent>
+                        <LocalCarWashIcon sx={{fontSize: 75,}}></LocalCarWashIcon>
+                        <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>Internal Package</Typography>
+
+                        <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>1-2 Days to Complete</Typography>
+
+                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes: </Typography>
+                        <Typography sx={{textAlign: 'left'}}>
+                          <ul>
+                            <li>Full Internal Cleaning</li>
+                            <li>Ect.</li>
+                          </ul>
+                        </Typography>
+
+                        <Typography>Starting Price: $50</Typography>
+                        <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
+                        
+                      </CardContent>
+                    </Card>
+                  </Fade>
+                </Grid>
+
+                <Grid item xs={4}>
+
+                  {/* FULL PACKAGE */}
+                  <Fade big delay={1250}>
+                    <Card sx={{ minWidth: 275 }} elevation={20}>
+                      <CardContent>
+                        <LocalCarWashIcon sx={{fontSize: 75,}}></LocalCarWashIcon>
+                        <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>Full Package</Typography>
+
+                        <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>2-3 Days to Complete</Typography>
+
+                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes: </Typography>
+                        <Typography sx={{textAlign: 'left'}}>
+                          <ul>
+                            <li>Full External Cleaning</li>
+                            <li>Full Internal Cleaning</li>
+                            <li>Ect.</li>
+                          </ul>
+                        </Typography>
+
+                        <Typography>Starting Price: $100</Typography>
+                        <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
+                        
+                      </CardContent>
+                    </Card>
+                  </Fade>
+                </Grid>
+
+                <Grid item xs={4}>
+
+                  {/* EXTERNAL PACKAGE */}
+                  <Fade big delay={750}>
+                    <Card sx={{ minWidth: 275 }} elevation={10}>
+                      <CardContent>
+                        <LocalCarWashIcon sx={{fontSize: 75,}}></LocalCarWashIcon>
+                        <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>External Package</Typography>
+
+                        <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>1-2 Days to Complete</Typography>
+
+                        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes: </Typography>
+                        <Typography sx={{textAlign: 'left'}}>
+                          <ul>
+                            <li>Full External Cleaning</li>
+                            <li>Ect.</li>
+                          </ul>
+                        </Typography>
+
+                        <Typography>Starting Price: $50</Typography>
+                        <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
+                        
+                      </CardContent>
+                    </Card>
+                  </Fade>
+                </Grid>
+
+              </Grid>
+
+            </Paper>
+          </Box>
+
+
 
           {/* CONTACT INFORMATION */}
           <Box sx={{flexGrow: 1, textAlign: 'center', mt: 10, p: 2}}>
