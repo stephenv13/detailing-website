@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {AppBar, Box, Toolbar, Typography, Button, Grid, useTheme, MobileStepper, Paper, Card, CardContent,} from '@mui/material'
+import {AppBar, Box, Toolbar, Typography, Button, Grid, useTheme, MobileStepper, Paper, Card, CardContent, List, ListItem,} from '@mui/material'
 import {KeyboardArrowLeft, KeyboardArrowRight} from '@mui/icons-material';
 
 import logo from '/assets/car-logo.svg'
@@ -154,12 +154,11 @@ function Home() {
                         <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>1-2 Days to Complete</Typography>
 
                         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes: </Typography>
-                        <Typography sx={{textAlign: 'left'}}>
-                          <ul>
+
+                          <ul style={{textAlign: 'left'}}>
                             <li>Full Internal Cleaning</li>
                             <li>Ect.</li>
                           </ul>
-                        </Typography>
 
                         <Typography>Starting Price: $50</Typography>
                         <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
@@ -181,13 +180,12 @@ function Home() {
                         <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>2-3 Days to Complete</Typography>
 
                         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes: </Typography>
-                        <Typography sx={{textAlign: 'left'}}>
-                          <ul>
+
+                          <ul style={{textAlign: 'left'}}>
                             <li>Full External Cleaning</li>
                             <li>Full Internal Cleaning</li>
                             <li>Ect.</li>
                           </ul>
-                        </Typography>
 
                         <Typography>Starting Price: $100</Typography>
                         <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
@@ -209,12 +207,11 @@ function Home() {
                         <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>1-2 Days to Complete</Typography>
 
                         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes: </Typography>
-                        <Typography sx={{textAlign: 'left'}}>
-                          <ul>
+
+                          <ul style={{textAlign: 'left'}}>
                             <li>Full External Cleaning</li>
                             <li>Ect.</li>
                           </ul>
-                        </Typography>
 
                         <Typography>Starting Price: $50</Typography>
                         <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
