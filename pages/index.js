@@ -59,7 +59,7 @@ function Home() {
         {/* HOME PAGE NAV BAR */}
         <AppBar position="static">
           <Toolbar>
-            <Image src={logo} height={50} width={50}/>
+            <LocalCarWashIcon sx={{fontSize: 40}}></LocalCarWashIcon>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>Griggs Detailing</Typography>
             <Button sx={{ fontWeight: 'bold' }} color="inherit">Contact Us</Button>
           </Toolbar>
