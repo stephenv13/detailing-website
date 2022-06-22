@@ -1,10 +1,9 @@
 import * as React from 'react';
-import {AppBar, Box, Toolbar, Typography, Button, Grid, useTheme, MobileStepper, Paper, Card, CardContent, List, ListItem,} from '@mui/material'
+import {scroller} from 'react-scroll'
+import {AppBar, Box, Toolbar, Typography, Button, Grid, Paper, Card, CardContent,} from '@mui/material'
 
 import Image from 'next/dist/client/image';
 
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import LocalCarWashIcon from '@mui/icons-material/LocalCarWash';
@@ -28,11 +27,22 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 
 
+
 function Home() {
 
   const about_us = "Welcome to Grigg's Detailing! We are a solo-run, local detailing start-up based in Newark, Ohio. "
     + "We offer a variety of services from interior details and exterior details to clay and paint sealants. "
     + "Check out our current service offerings below!"
+  
+    const scrollToContact = () => {
+      scroller.scrollTo("contact", {
+        duration: 800,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      });
+    };
+
+
 
   
   return (
@@ -42,8 +52,8 @@ function Home() {
         <AppBar position="static">
           <Toolbar>
             <LocalCarWashIcon sx={{fontSize: 40}}></LocalCarWashIcon>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>Griggs Detailing</Typography>
-            <Button sx={{ fontWeight: 'bold' }} color="inherit">Contact Us</Button>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>Grigg's Detailing</Typography>
+            <Button sx={{ fontWeight: 'bold'}} color="inherit" onClick= {scrollToContact}>Contact Us</Button>
           </Toolbar>
         </AppBar>
 
@@ -81,33 +91,78 @@ function Home() {
           
         {/* ABOUT US */}
         <Typography sx={{fontWeight: 'bold', fontSize: 75, textAlign: 'center', mt: 2,}}>About Us</Typography>
-        <Typography sx={{p: 2,}}>{about_us}</Typography>
+        <Typography sx={{p: 2, mb: 30, textAlign: 'center'}}>{about_us}</Typography>
 
 
         {/* SERVICES */}
         <Typography sx={{fontSize: 75, fontWeight: 'bold', textAlign: 'center', mt:5}}>Services</Typography>
         <Typography sx={{fontSize: 25, textAlign: 'center'}}>100% Satisfaction Guaranteed</Typography>
-
+            
+            {/* FIRST ROW OF SERVICES */}
             <Grid container spacing={10} sx={{p: 5,}}>
-              <Grid item xs={4}>
+              <Grid item xs={12} md={4} align= 'center'>
 
-                {/* INTERNAL PACKAGE */}
+                {/* INTERIOR DETAIL */}
                 <Fade big delay={750}>
-                  <Card sx={{ minWidth: 275 }} elevation={10}>
+                  <Card sx={{textAlign: 'center', minHeight: 640, maxWidth: 575}} elevation={20}>
                     <CardContent>
                       <LocalCarWashIcon sx={{fontSize: 75,}}></LocalCarWashIcon>
-                      <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>Internal Package</Typography>
+                      <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>Interior Detail</Typography>
 
-                      <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>1-2 Days to Complete</Typography>
+                      <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>2-4 Hours to Complete</Typography>
 
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes: </Typography>
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes:</Typography>
 
-                        <ul style={{textAlign: 'left'}}>
-                          <li>Full Internal Cleaning</li>
-                          <li>Ect.</li>
+                        <ul style={{display:'inline-block', textAlign: 'left'}}>
+                          <li>Interior Vacuum</li>
+                          <li>Plastics, Dash and Cup Holders Wiped Down</li>
+                          <li>Door Jambs Wiped Down</li>
+                          <li>Cloth Seat and Floor Extraction</li>
+                          <li>Leather Seats Cleaned and Conditioned</li>
+                          <li>Windows Wiped Down</li>
                         </ul>
 
-                      <Typography>Starting Price: $50</Typography>
+                      <Box sx={{mt:18}}>
+                        <Typography sx={{fontWeight: 'bold'}}>Starting Price: $49.99</Typography>
+                        <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
+                      </Box>
+
+                      
+                    </CardContent>
+                  </Card>
+                </Fade>
+              </Grid>
+
+              <Grid item xs={12} md={4}>
+
+                {/* FULL INTERIOR & EXTERIOR DETAIL */}
+                <Fade big delay={750}>
+                  <Card sx={{textAlign: 'center', minHeight: 640, maxWidth: 575}} elevation={20}>
+                    <CardContent>
+                      <LocalCarWashIcon sx={{fontSize: 75,}}></LocalCarWashIcon>
+                      <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>Interior & Exterior Detail</Typography>
+
+                      <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>4-5 Hours to Complete</Typography>
+
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes:</Typography>
+
+                        <ul style={{display:'inline-block', textAlign: 'left'}}>
+                          <li>Interior Vacuum</li>
+                          <li>Plastics, Dash and Cup Holders Wiped Down</li>
+                          <li>Door Jambs Wiped Down</li>
+                          <li>Windows Wiped Down</li>
+                          <li>Foam Bath</li>
+                          <li>Contact Wash</li>
+                          <li>Wheel and Tire Cleaning</li>
+                          <li>Clar Bar</li>
+                          <li>Iron Removal</li>
+                          <li>6 Month Ceramic Spray Sealant</li>
+                          <li>Engine Cleaning</li>
+                          <li>Cloth Seat and Floor Extraction</li>
+                          <li>Leather Seat Cleaning and Conditioning</li>
+                        </ul>
+
+                      <Typography sx={{fontWeight: 'bold'}}>Starting Price: $199.99</Typography>
                       <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
                       
                     </CardContent>
@@ -115,26 +170,71 @@ function Home() {
                 </Fade>
               </Grid>
 
-              <Grid item xs={4}>
+              <Grid item xs={12} md={4}>
 
-                {/* FULL PACKAGE */}
-                <Fade big delay={1250}>
-                  <Card sx={{ minWidth: 275 }} elevation={20}>
+                {/* CLAY & PAINT SEALANT */}
+                <Fade big delay={750}>
+                  <Card sx={{textAlign: 'center', minHeight: 640, maxWidth: 575}} elevation={20}>
                     <CardContent>
                       <LocalCarWashIcon sx={{fontSize: 75,}}></LocalCarWashIcon>
-                      <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>Full Package</Typography>
+                      <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>Clay & Paint Sealant</Typography>
 
-                      <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>2-3 Days to Complete</Typography>
+                      <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>3-4 Hours to Complete</Typography>
 
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes: </Typography>
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes:</Typography>
 
-                        <ul style={{textAlign: 'left'}}>
-                          <li>Full External Cleaning</li>
-                          <li>Full Internal Cleaning</li>
-                          <li>Ect.</li>
+                        <ul style={{display:'inline-block', textAlign: 'left'}}>
+                          <li>Interior Vacuum</li>
+                          <li>Plastics, Dash and Cup Holders Wiped Down</li>
+                          <li>Door Jambs Wiped Down</li>
+                          <li>Windows Wiped Down</li>
+                          <li>Foam bath</li>
+                          <li>Contact Wash</li>
+                          <li>Wheel and Tire Cleaning</li>
+                          <li>Clay Bar</li>
+                          <li>Iron Removal</li>
+                          <li>6 Month Ceramic Spray Sealant</li>
                         </ul>
 
-                      <Typography>Starting Price: $100</Typography>
+                      <Box sx={{mt:8}}>
+                        <Typography sx={{fontWeight: 'bold'}}>Starting Price: $179.99</Typography>
+                        <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
+                      </Box>
+
+                      
+                    </CardContent>
+                  </Card>
+                </Fade>
+              </Grid>
+
+            </Grid>
+
+            {/* SECOND ROW OF SERVICES */}
+            <Grid container spacing={1} sx={{p:5}}>
+              <Grid item xs={12} md={6} align='center'>
+
+                {/* EXPRESS DETAIL */}
+                <Fade big delay={750}>
+                  <Card sx={{maxWidth: 450, minHeight: 510, textAlign: 'center'}} elevation={20}>
+                    <CardContent>
+                      <LocalCarWashIcon sx={{fontSize: 75,}}></LocalCarWashIcon>
+                      <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>Express Detail</Typography>
+
+                      <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>2-3 Hours to Complete</Typography>
+
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes:</Typography>
+
+                        <ul style={{display:'inline-block', textAlign: 'left'}}>
+                          <li>Interior Vacuum</li>
+                          <li>Plastics, Dash and Cup Holders Wiped Down</li>
+                          <li>Door Jambs Wiped Down</li>
+                          <li>Windows Wiped Down</li>
+                          <li>Foam Bath</li>
+                          <li>Contact Wash</li>
+                          <li>Wheels and Tires Cleaned</li>
+                        </ul>
+
+                      <Typography sx={{fontWeight: 'bold'}}>Starting Price: $74.99</Typography>
                       <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
                       
                     </CardContent>
@@ -142,26 +242,29 @@ function Home() {
                 </Fade>
               </Grid>
 
-              <Grid item xs={4}>
+              <Grid item xs={12} md={6} align='center'>
 
-                {/* EXTERNAL PACKAGE */}
+                {/* MAINTENANCE WASH */}
                 <Fade big delay={750}>
-                  <Card sx={{ minWidth: 275 }} elevation={10}>
+                  <Card sx={{maxWidth: 450, minHeight: 510, textAlign: 'center'}} elevation={20}>
                     <CardContent>
                       <LocalCarWashIcon sx={{fontSize: 75,}}></LocalCarWashIcon>
-                      <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>External Package</Typography>
+                      <Typography sx={{fontSize: 40, fontWeight: 'bold'}}>Maintenance Wash</Typography>
 
-                      <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>1-2 Days to Complete</Typography>
+                      <Typography sx={{fontSize: 18, fontWeight: 'bold'}}>1-2 Hours to Complete</Typography>
 
-                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes: </Typography>
+                      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom> <br></br>This package includes:</Typography>
 
-                        <ul style={{textAlign: 'left'}}>
-                          <li>Full External Cleaning</li>
-                          <li>Ect.</li>
+                        <ul style={{display:'inline-block', textAlign: 'left'}}>
+                          <li>Bi-Weekly Cleaning</li>
+                          <li>Full Interior and Exterior Cleaning</li>
                         </ul>
 
-                      <Typography>Starting Price: $50</Typography>
-                      <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
+                      <Box sx={{mt: 13}}>
+                        <Typography sx={{fontWeight: 'bold'}}>Starting Price: $39.99</Typography>
+                        <Button variant='contained' sx={{mt: 2}}>Schedule Now</Button>
+                      </Box>
+
                       
                     </CardContent>
                   </Card>
@@ -173,35 +276,37 @@ function Home() {
 
 
       {/* CONTACT INFORMATION */}
-      <Box sx={{flexGrow: 1, textAlign: 'center', mt: 10, p: 2}}>
+      <Box className='contact' sx={{flexGrow: 1, textAlign: 'center', mt: 25, p: 2}}>
           <Typography variant='h1'>Contact Us</Typography>
-          <Typography variant='p'>Questions? Concerns? We'd love to hear from you!</Typography>
+          <Typography variant='p' sx={{fontWeight: 'normal'}}>Questions? Concerns? We'd love to hear from you!</Typography>
 
-          <Grid container spacing={10} sx={{p: 5,}}>
-            <Grid item md={6}>
+          <Fade delay={500}>
+            <Grid container spacing={10} sx={{p: 10,}}>
+              <Grid item xs={12} sm={6} align='right'>
 
-              {/* EMAIL CARD */}
-              <Card sx={{}}>
-                <CardContent>
-                  <EmailIcon sx={{fontSize: 75}}></EmailIcon>
-                  <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Email us at:</Typography>
-                  <Typography variant="p">example@gmail.com</Typography>
-                </CardContent>
-              </Card>
+                {/* EMAIL CARD */}
+                <Card elevation={10} sx={{minWidth: 250, maxWidth: 300, textAlign: 'center'}}>
+                  <CardContent>
+                    <EmailIcon sx={{fontSize: 75}}></EmailIcon>
+                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Email us at:</Typography>
+                    <Typography variant="p">jgriggsdetailing@gmail.com</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={12} sm={6} align='left'>
+
+                {/* PHONE CARD */}
+                <Card elevation={10} sx={{minWidth: 250, maxWidth: 300, textAlign: 'center'}}>
+                  <CardContent>
+                    <PhoneIphoneIcon sx={{fontSize: 75,}}></PhoneIphoneIcon>
+                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Call or Text us at:</Typography>
+                    <Typography variant="p">(740)-975-3431</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
             </Grid>
-
-            <Grid item xs={6}>
-
-              {/* PHONE CARD */}
-              <Card sx={{}}>
-                <CardContent>
-                  <PhoneIphoneIcon sx={{fontSize: 75,}}></PhoneIphoneIcon>
-                  <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Call or Text us at:</Typography>
-                  <Typography variant="p">(123)-456-7890</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
+          </Fade>
       </Box>
 
     </Box>
