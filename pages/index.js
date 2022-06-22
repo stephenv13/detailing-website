@@ -90,7 +90,7 @@ function Home() {
         </Paper>
           
         {/* ABOUT US */}
-        <Typography sx={{fontWeight: 'bold', fontSize: 75, textAlign: 'center', mt: 2,}}>About Us</Typography>
+        <Typography sx={{fontWeight: 'bold', fontSize: 75, textAlign: 'center', mt: 10,}}>About Us</Typography>
         <Typography sx={{p: 2, mb: 30, textAlign: 'center'}}>{about_us}</Typography>
 
 
