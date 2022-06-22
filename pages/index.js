@@ -11,7 +11,6 @@ import LocalCarWashIcon from '@mui/icons-material/LocalCarWash';
 import Fade from 'react-reveal/Fade'
 
 // SWIPER CAROUSEL
-import { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -19,8 +18,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-// import "/src/styles.css";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -75,23 +72,23 @@ function Home() {
           >
 
             <SwiperSlide>
-              <Image src={'/bmw2.jpg'} width={1920} height={1080}></Image>
+              <Image src={'/bmw2.jpg'} width={1920/2} height={1080/2}></Image>
             </SwiperSlide>
             <SwiperSlide>
-              <Image src={'/tesla.jpg'} width={1920} height={1080}></Image>
+              <Image src={'/tesla.jpg'} width={1920/2} height={1080/2}></Image>
             </SwiperSlide>
             <SwiperSlide>
-              <Image src={'/lambo.jpg'} width={1920} height={1080}></Image>
+              <Image src={'/lambo.jpg'} width={1920/2} height={1080/2}></Image>
             </SwiperSlide>
             <SwiperSlide>
-              <Image src={'/mercedes.jpg'} width={1920} height={1080}></Image>
+              <Image src={'/mercedes.jpg'} width={1920/2} height={1080/2}></Image>
             </SwiperSlide>
           </Swiper>   
         </Paper>
           
         {/* ABOUT US */}
-        <Typography sx={{fontWeight: 'bold', fontSize: 75, textAlign: 'center', mt: 10,}}>About Us</Typography>
-        <Typography sx={{p: 2, mb: 30, textAlign: 'center'}}>{about_us}</Typography>
+        <Typography sx={{fontWeight: 'bold', fontSize: 50, textAlign: 'center', mt: 10,}}>About Us</Typography>
+        <Typography sx={{p: 2, mb: 20, textAlign: 'center'}}>{about_us}</Typography>
 
 
         {/* SERVICES */}
@@ -99,7 +96,7 @@ function Home() {
         <Typography sx={{fontSize: 25, textAlign: 'center'}}>100% Satisfaction Guaranteed</Typography>
             
             {/* FIRST ROW OF SERVICES */}
-            <Grid container spacing={10} sx={{p: 5,}}>
+            <Grid container spacing={10} sx={{p: 5,}} align='center'>
               <Grid item xs={12} md={4} align= 'center'>
 
                 {/* INTERIOR DETAIL */}
