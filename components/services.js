@@ -7,11 +7,11 @@ export default function Services() {
     const services = require('./data/services.json')
         return (
                 <Grid container spacing={10} sx={{p: 5,}}>
-                {services.map(service => {
+                {services.map((service,id) => {
 
                     return (
 
-                        <Grid item xs={12} sm={12} md={6} lg={4} xl={4} sx={{display: 'flex', justifyContent: 'center'}}>
+                        <Grid item xs={12} sm={12} md={6} lg={4} xl={4} sx={{display: 'flex', justifyContent: 'center'}}  key={id}>
                             <Card 
                                 sx={{textAlign: 'center', display: 'flex', flexDirection: 'column', width: {
                                     sx: 1.0,
@@ -30,8 +30,8 @@ export default function Services() {
 
 
                                         <ul style={{display:'inline-block', textAlign: 'left'}}>
-                                            {service.includes.map(action => {
-                                                return <li>{action}</li>
+                                            {service.includes.map((action, i) => {
+                                                return <li key={i}>{action}</li>
 
                                             })}
                                         </ul>
