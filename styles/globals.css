@@ -4,6 +4,10 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  scroll-behavior: smooth;
+
+  /* --swiper-navigation-color: red; */
 }
 
 a {
@@ -15,6 +19,3 @@ a {
   box-sizing: border-box;
 }
 
-.contact {
-  font-weight: bold;
-}

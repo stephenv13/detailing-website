@@ -1,0 +1,75 @@
+[
+    {
+        "service_name": "Interior Detail",
+        "completion_time": "2-4",
+        "includes": [
+            "Interior Vacuum",
+            "Plastics, Dash and Cup Holders Wiped Down",
+            "Door Jambs Wiped Down",
+            "Cloth Seat and Floor Extraction",
+            "Leather Seats Cleaned and Conditioned",
+            "Windows Wiped Down"
+        ],
+        "price": "$49.99"
+    },
+    {
+        "service_name": "Interior & Exterior Detail",
+        "completion_time": "4-5",
+        "includes": [
+            "Interior Vacuum",
+            "Plastics, Dash and Cup Holders Wiped Down",
+            "Door Jambs Wiped Down",
+            "Windows Wiped Down",
+            "Foam Bath",
+            "Contact Wash",
+            "Wheel and Tire Cleaning",
+            "Clar Bar",
+            "Iron Removal",
+            "6 Month Ceramic Spray Sealant",
+            "Engine Cleaning",
+            "Cloth Seat and Floor Extraction",
+            "Leather Seat Cleaning and Conditioning"
+        ],
+        "price": "$199.99"
+    },
+    {
+        "service_name": "Clay & Paint Sealant",
+        "completion_time": "3-4",
+        "includes": [
+            "Interior Vacuum",
+            "Plastics, Dash and Cup Holders Wiped Down",
+            "Door Jambs Wiped Down",
+            "Windows Wiped Down",
+            "Foam Bath",
+            "Contact Wash",
+            "Wheel and Tire Cleaning",
+            "Clar Bar",
+            "Iron Removal",
+            "6 Month Ceramic Spray Sealant"
+        ],
+        "price": "$179.99"
+    },
+    {
+        "service_name": "Express Detail",
+        "completion_time": "2-3",
+        "includes": [
+            "Interior Vacuum",
+            "Plastics, Dash and Cup Holders Wiped Down",
+            "Door Jambs Wiped Down",
+            "Windows Wiped Down",
+            "Foam Bath",
+            "Contact Wash",
+            "Wheel and Tire Cleaning"
+        ],
+        "price": "$74.99"
+    },
+    {
+        "service_name": "Maintenance Wash",
+        "completion_time": "1-2",
+        "includes": [
+            "Bi-Weekly Cleaning",
+            "Full Interior and Exterior Cleaning"
+        ],
+        "price": "$39.99"
+    } 
+]
