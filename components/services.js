@@ -1,4 +1,4 @@
-import {Card, CardContent, CardActions, Typography, Button, Grid, Stack} from '@mui/material'
+import {Card, CardContent, CardActions, Typography, Button, Grid, Stack, Fade} from '@mui/material'
 import LocalCarWashIcon from '@mui/icons-material/LocalCarWash';
 
 import ServiceFormModal from './modal';
@@ -6,6 +6,7 @@ import ServiceFormModal from './modal';
 export default function Services() {
     const services = require('./data/services.json')
         return (
+
                 <Grid container spacing={10} sx={{p: 5,}}>
                 {services.map((service,id) => {
 
