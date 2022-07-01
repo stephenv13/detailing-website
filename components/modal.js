@@ -1,4 +1,4 @@
-import React, { useState, SelectProps } from 'react';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
@@ -6,7 +6,11 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { Grid, Typography, MenuItem, Select, InputLabel, FormControl } from '@mui/material';
+import { Grid, Typography, MenuItem, Select, InputLabel, FormControl, Alert, AlertTitle, Snackbar, IconButton } from '@mui/material';
+
+import CloseIcon from '@mui/icons-material/Close';
+
+import emailjs from '@emailjs/browser'
 
 // forms start with blank default values
 const formValues = {
@@ -16,12 +20,16 @@ const formValues = {
   phone: "",
   make: "",
   model: "",
-  year: ""
+  year: "",
+  comments: ""
 };
 
-export default function ServiceFormModal() {
+export default function ServiceFormModal({serviceName}) {
 
+  // variable and set variable definitions
   const [open, setOpen] = useState(false);
+  const [snackbar, setSnackbar] = useState(false);
+
   const [firstName, setFirstName] = useState(formValues.firstName);
   const [lastName, setLastName] = useState(formValues.lastName);
   const [email, setEmail] = useState(formValues.email);
@@ -29,6 +37,7 @@ export default function ServiceFormModal() {
   const [make, setMake] = useState(formValues.make);
   const [model, setModel] = useState(formValues.model);
   const [year, setYear] = useState(formValues.year);
+  const [comments, setComments] = useState(formValues.comments);
 
 
   const changeFirstName = event => {
@@ -59,15 +68,34 @@ export default function ServiceFormModal() {
     setYear(formValues.year = event.target.value);
   };
 
-  const handleClickOpen = () => {
-    setOpen(true);
-
+  const changeComments = event => {
+    setComments(formValues.comments = event.target.value);
   };
 
-  const handleClose = (event) => {
-    setOpen(false);
+  // FUNCTIONS
 
-    // reset form values on close
+  const snackClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackbar(false);
+  };
+
+  const action = (
+    <React.Fragment>
+      <IconButton
+        size="small"
+        aria-label="close"
+        color="inherit"
+        onClick={snackClose}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+    </React.Fragment>
+  );
+
+  const resetValues = () => {
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -75,14 +103,49 @@ export default function ServiceFormModal() {
     setMake("");
     setModel("");
     setYear("");
+    setComments("");
+  }
+
+  const handleClickOpen = () => {
+    setOpen(true);
+
   };
 
-  const Submit = (event) => {
-    event.preventDefault();
+  const handleClose = (event) => {
     setOpen(false);
+    resetValues();
+  };
 
-    console.log(formValues)
-  }
+  // FORM SUBMIT FUNCTION
+  const Submit = (event) => {
+    // event.preventDefault();
+    setOpen(false);
+    setSnackbar(true);
+
+    var templateParams = {
+      to_name: 'Josh',
+      customer_name: formValues.firstName + ' ' + formValues.lastName,
+      service_name: serviceName,
+      email: formValues.email,
+      phone: formValues.phone,
+      car_make: formValues.make,
+      car_model: formValues.model,
+      car_year: formValues.year,
+      comments: formValues.comments
+    };
+
+    // on submit, use email.js to send form in an email
+    emailjs.send('service_4o4i4yn', 'template_fvermpx', templateParams, '0QV2Inyjpk3iddOBu')
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+
+    resetValues();
+  };
+
+
 
   // makes an array of years based on a starting year and current year
   const years = function(startYear) {
@@ -94,15 +157,16 @@ export default function ServiceFormModal() {
     return years;
   }
 
+  // define json files
   const makes = require('./data/makes.json')
   const models = require('./data/models.json')
 
   return (
     <div>
-      <Button variant="contained" onClick={handleClickOpen}>Schedule Now</Button>
+      <Button variant="contained" onClick={handleClickOpen}>Request Service</Button>
 
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle sx={{fontWeight: 'bold'}}>Schedule Service</DialogTitle>
+        <DialogTitle sx={{fontWeight: 'bold'}}>Request Service: {serviceName}</DialogTitle>
 
         <Grid>
           <Grid item xs={12}>
@@ -112,13 +176,14 @@ export default function ServiceFormModal() {
               sm: 600
             }}}>
             <DialogContentText>
-              To schedule a service, please fill out the form below:
+              To request a service, please fill out the form below:
             </DialogContentText>
 
               {/* PERSONAL INFORMATION */}
               <Typography sx={{mt: 4, fontWeight: 'bold'}}>Personal Information</Typography>
 
                 <Grid container spacing={1}>
+                  {/* FIRST NAME */}
                   <Grid item xs={12} sm={6}>
                   <TextField
                     required
@@ -134,6 +199,7 @@ export default function ServiceFormModal() {
                     />
                   </Grid>
 
+                  {/* LAST NAME */}
                   <Grid item xs={12} sm={6}>
                     <TextField
                       required
@@ -150,6 +216,7 @@ export default function ServiceFormModal() {
                   </Grid>
                 </Grid>
 
+                {/* EMAIL */}
                 <TextField
                   required
                   autoFocus
@@ -163,6 +230,7 @@ export default function ServiceFormModal() {
                   onChange={changeEmail}
                 />
 
+                {/* PHONE NUMBER */}
                 <TextField
                   required
                   autoFocus
@@ -192,7 +260,8 @@ export default function ServiceFormModal() {
                         name="make"
                         label= "Car Make"
                         value={make}
-                        onChange={changeMake}>
+                        onChange={changeMake}
+                        >
 
                           {/* map each car make for the selector menu */}
                           {makes.map((item) => (
@@ -242,6 +311,27 @@ export default function ServiceFormModal() {
                   </Grid>
 
                 </Grid>
+                  {/* ADDITIONAL COMMENTS */}
+                  <Typography sx={{mt: 4, fontWeight: 'bold'}}>Additional Comments</Typography>
+
+                  <Grid container spacing={1}>
+                    <Grid item xs={12}>
+                      <TextField
+                        autoFocus
+                        margin="dense"
+                        id="comments"
+                        label="Comments"
+                        type="text"
+                        fullWidth
+                        variant="outlined"
+                        value={comments}
+                        onChange={changeComments}
+                        multiline
+                        minRows={4}
+                      />
+                  </Grid>
+
+                </Grid>
 
             </DialogContent>
           </Grid>
@@ -252,6 +342,21 @@ export default function ServiceFormModal() {
           <Button variant= 'contained' onClick={Submit} type='submit'>Submit</Button>
         </DialogActions>
       </Dialog>
+      
+      {/* FORM SUBMITTAL SUCCESS BANNER */}
+      <Snackbar
+        open={snackbar}
+        autoHideDuration={10000}
+        onClose={snackClose}
+        message="Note archived"
+        action={action}
+      >
+        <Alert severity="success">
+          <AlertTitle>Request Submitted</AlertTitle>
+          We will be in touch soon to schedule your service! <strong>Thank you!</strong>
+          </Alert>
+      </Snackbar>
+
     </div>
   );
 }

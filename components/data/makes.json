@@ -1,9 +1,107 @@
 [
 {
-    "make": "Honda"
+    "make": "ACURA"
 },
 {
-    "make": "Toyota"
+    "make": "AUDI"
+},
+{
+    "make": "BMW"
+},
+{
+    "make": "BUICK"
+},
+{
+    "make": "CADILLAC"
+},
+{
+    "make": "CHEVROLET"
+},
+{
+    "make": "CHRYSLER"
+},
+{
+    "make": "DODGE"
+},
+{
+    "make": "FIAT"
+},
+{
+    "make": "FORD"
+},
+{
+    "make": "GENESIS"
+},
+{
+    "make": "GMC"
+},
+{
+    "make": "HYUNDAI"
+},
+{
+    "make": "HONDA"
+},
+{
+    "make": "INFINITI"
+},
+{
+    "make": "JAGUAR"
+},
+{
+    "make": "JEEP"
+},
+{
+    "make": "KIA"
+},
+{
+    "make": "LAND ROVER"
+},
+{
+    "make": "LEXUS"
+},
+{
+    "make": "LINCOLN"
+},
+{
+    "make": "MAZDA"
+},
+{
+    "make": "MERCEDES-BENZ"
+},
+{
+    "make": "MERCURY"
+},
+{
+    "make": "MINI"
+},
+{
+    "make": "MITSUBISHI"
+},
+{
+    "make": "NISSAN"
+},
+{
+    "make": "SCION"
+},
+{
+    "make": "SUBARU"
+},
+{
+    "make": "SUZUKI"
+},
+{
+    "make": "TESLA"
+},
+{
+    "make": "TOYOTA"
+},
+{
+    "make": "VOLKSWAGEN"
+},
+{
+    "make": "VOLVO"
+},
+{
+    "make": "OTHER"
 }
-
 ]

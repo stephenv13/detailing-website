@@ -5,6 +5,7 @@ import ServiceFormModal from './modal';
 
 export default function Services() {
     const services = require('./data/services.json')
+
         return (
 
                 <Grid container spacing={10} sx={{p: 5,}}>
@@ -44,7 +45,7 @@ export default function Services() {
                                         <Stack>
                                         <Typography sx={{fontWeight: 'bold', mb: 2}}>Starting Price: {service.price}</Typography>
                                         {/* <Button variant='contained'>Schedule Now</Button> */}
-                                        <ServiceFormModal></ServiceFormModal>
+                                        <ServiceFormModal serviceName = {service.service_name}></ServiceFormModal>
                                         </Stack>
                                     </CardActions>
 
