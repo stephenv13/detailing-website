@@ -1,16 +1,17 @@
-import {Card, CardContent, CardActions, Typography, Button, Grid, Stack} from '@mui/material'
+import {Card, CardContent, CardActions, Typography, Button, Grid, Stack, Fade} from '@mui/material'
 import LocalCarWashIcon from '@mui/icons-material/LocalCarWash';
 
 import ServiceFormModal from './modal';
 
 export default function Services() {
     const services = require('./data/services.json')
+
         return (
                 <Grid container spacing={10} sx={{p: 5,}}>
                 {services.map((service,id) => {
 
                     return (
-
+                        
                         <Grid item xs={12} sm={12} md={6} lg={4} xl={4} sx={{display: 'flex', justifyContent: 'center'}}  key={id}>
                             <Card 
                                 sx={{textAlign: 'center', display: 'flex', flexDirection: 'column', width: {
@@ -43,12 +44,13 @@ export default function Services() {
                                         <Stack>
                                         <Typography sx={{fontWeight: 'bold', mb: 2}}>Starting Price: {service.price}</Typography>
                                         {/* <Button variant='contained'>Schedule Now</Button> */}
-                                        <ServiceFormModal></ServiceFormModal>
+                                        <ServiceFormModal serviceName = {service.service_name}></ServiceFormModal>
                                         </Stack>
                                     </CardActions>
 
                             </Card>
                         </Grid>
+                        
 
                     );
                 })}

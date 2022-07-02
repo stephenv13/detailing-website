@@ -1,13 +1,12 @@
 import * as React from 'react';
 import {scroller} from 'react-scroll'
-import {AppBar, Box, Toolbar, Typography, Button,} from '@mui/material'
+import {AppBar, Box, Toolbar, Typography, Button, Fade} from '@mui/material'
 
 import LocalCarWashIcon from '@mui/icons-material/LocalCarWash';
 
 import Services from '../components/services'
 import Carousel from '../components/carousel';
-import ContactUs from '../components/contactus';
-import ServiceFormModal from '../components/modal';
+import ContactUs from '../components/contact_us';
 
 
 
@@ -50,6 +49,7 @@ export default function Home() {
       {/* SERVICES */}
       <Typography sx={{fontSize: 75, fontWeight: 'bold', textAlign: 'center', mt:5}}>Services</Typography>
       <Typography sx={{fontSize: 20, textAlign: 'center'}}>100% Satisfaction Guaranteed</Typography>
+
       <Services></Services>
 
 
