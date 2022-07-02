@@ -265,7 +265,7 @@ export default function ServiceFormModal({serviceName}) {
 
                           {/* map each car make for the selector menu */}
                           {makes.map((item) => (
-                            <MenuItem key={item.make} value={item.make}>{item.make}</MenuItem>
+                            <MenuItem key={item} value={item}>{item}</MenuItem>
                           ))}
                         </Select>
                     </FormControl>

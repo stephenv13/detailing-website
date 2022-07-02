@@ -6,8 +6,7 @@ import LocalCarWashIcon from '@mui/icons-material/LocalCarWash';
 
 import Services from '../components/services'
 import Carousel from '../components/carousel';
-import ContactUs from '../components/contactus';
-import ServiceFormModal from '../components/modal';
+import ContactUs from '../components/contact_us';
 
 
 
