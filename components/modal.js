@@ -135,7 +135,7 @@ export default function ServiceFormModal({serviceName}) {
     };
 
     // on submit, use email.js to send form in an email
-    emailjs.send('service_4o4i4yn', 'template_fvermpx', templateParams, '0QV2Inyjpk3iddOBu')
+    emailjs.send('service_hzpjk9n', 'template_spnm0dv', templateParams, 'mYk732YmVuzbdwbjK')
     .then(function(response) {
        console.log('SUCCESS!', response.status, response.text);
     }, function(error) {
