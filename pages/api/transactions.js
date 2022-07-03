@@ -1,5 +1,5 @@
 import { collection, getDocs, addDoc } from "firebase/firestore";
-import { db } from "../database.js"
+import { db } from "../../database.js"
 
 const dbInstance = collection(db, "transactions")
 
