@@ -163,7 +163,7 @@ export default function ServiceFormModal({serviceName}) {
 
   return (
     <div>
-      <Button variant="contained" onClick={handleClickOpen}>Request Service</Button>
+      <Button className='serviceButton' variant="contained" onClick={handleClickOpen}>Request Service</Button>
 
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle sx={{fontWeight: 'bold'}}>Request Service: {serviceName}</DialogTitle>

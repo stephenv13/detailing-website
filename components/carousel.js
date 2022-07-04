@@ -15,7 +15,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Carousel() {
         return (
-            <Paper elevation={1} sx={{mx: 5, mt: 1}}>
+            <Paper elevation={0} sx={{mx: 5, mt: 1}}>
             <Swiper
               spaceBetween={30}
               centeredSlides={true}
@@ -32,16 +32,28 @@ export default function Carousel() {
             >
   
               <SwiperSlide>
-                <Image src={'/bmw2.jpg'} width={1920/2} height={1080/2} alt='image here'></Image>
+                <Image src={'/4runner.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={'/tesla.jpg'} width={1920/2} height={1080/2} alt='image here' ></Image>
+                <Image src={'/DirtySeats.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={'/lambo.jpg'} width={1920/2} height={1080/2} alt='image here'></Image>
+                <Image src={'/DirtySeats2.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={'/mercedes.jpg'} width={1920/2} height={1080/2} alt='image here'></Image>
+                <Image src={'/DogHair.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={'/MercedesExterior.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={'/MercedesInterior.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={'/MercedesTires.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image src={'/Rav4.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
               </SwiperSlide>
             </Swiper>   
           </Paper> 

@@ -21,10 +21,11 @@ export default function Services() {
                                     md: 450,
                                     lg: 500,
                                     xl: 550
-                                }}} elevation={20}>
+                                }}} elevation={20}
+                                className='serviceCard'>
                                     
-                                    <CardContent>
-                                        <LocalCarWashIcon sx={{fontSize: 60,}}></LocalCarWashIcon>
+                                    <CardContent className='cardText'>
+                                        <LocalCarWashIcon className='carIcon' sx={{fontSize: 60,}}></LocalCarWashIcon>
                                         <Typography sx={{fontSize: 30, fontWeight: 'bold'}}>{service.service_name}</Typography>
                                         <Typography sx={{fontSize: 15, fontWeight: 'bold'}}>{service.completion_time} Hours to Complete</Typography>
                                         <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom> <br></br>This package includes:</Typography>
