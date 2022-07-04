@@ -19,7 +19,7 @@ export default function ContactUs() {
                         {/* EMAIL CARD */}
                         <Card elevation={10} sx={{minWidth: 250, maxWidth: 300, textAlign: 'center'}}>
                         <CardContent>
-                            <EmailIcon sx={{fontSize: 75}}></EmailIcon>
+                            <EmailIcon className='emailIcon' sx={{fontSize: 75}}></EmailIcon>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Email us at:</Typography>
                             <Typography variant="p">jgriggsdetailing@gmail.com</Typography>
                         </CardContent>
@@ -31,7 +31,7 @@ export default function ContactUs() {
                         {/* PHONE CARD */}
                         <Card elevation={10} sx={{minWidth: 250, maxWidth: 300, textAlign: 'center'}}>
                         <CardContent>
-                            <PhoneIphoneIcon sx={{fontSize: 75,}}></PhoneIphoneIcon>
+                            <PhoneIphoneIcon className='phoneIcon' sx={{fontSize: 75,}}></PhoneIphoneIcon>
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>Call or Text us at:</Typography>
                             <Typography variant="p">(740)-975-3431</Typography>
                         </CardContent>
