@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {scroller} from 'react-scroll'
 import {AppBar, Box, Toolbar, Typography, Button, Fade} from '@mui/material'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import LocalCarWashIcon from '@mui/icons-material/LocalCarWash';
 
@@ -25,37 +26,47 @@ export default function Home() {
     });
   };
 
+
+  // adds mui theme to override font
+  const theme = createTheme({
+    typography: {
+      fontFamily: ['Helvetica', 'Arial', 'sans-serif',]
+    },
+  });
+
   
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ flexGrow: 1}} className='homePage'>
 
-      {/* HOME PAGE NAV BAR */}
-      <AppBar position="static">
-        <Toolbar>
-          <LocalCarWashIcon sx={{fontSize: 40}}></LocalCarWashIcon>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>Grigg&apos;s Detailing</Typography>
-          <Button sx={{ fontWeight: 'bold'}} color="inherit" onClick= {scrollToContact}>Contact Us</Button>
-        </Toolbar>
-      </AppBar>
+        {/* HOME PAGE NAV BAR */}
+        <AppBar position="static" className='appbar'>
+          <Toolbar>
+            <LocalCarWashIcon sx={{fontSize: 40}}></LocalCarWashIcon>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>Grigg&apos;s Detailing</Typography>
+            <Button sx={{ fontWeight: 'bold'}} color="inherit" onClick= {scrollToContact}>Contact Us</Button>
+          </Toolbar>
+        </AppBar>
 
-      {/* CAROUSEL */}
-      <Carousel></Carousel>
-        
-      {/* ABOUT US */}
-      <Typography sx={{fontWeight: 'bold', fontSize: 50, textAlign: 'center', mt: 10,}}>About Us</Typography>
-      <Typography sx={{p: 2, mb: 20, textAlign: 'center'}}>{about_us}</Typography>
-
-
-      {/* SERVICES */}
-      <Typography sx={{fontSize: 75, fontWeight: 'bold', textAlign: 'center', mt:5}}>Services</Typography>
-      <Typography sx={{fontSize: 20, textAlign: 'center'}}>100% Satisfaction Guaranteed</Typography>
-
-      <Services></Services>
+        {/* CAROUSEL */}
+        <Carousel></Carousel>
+          
+        {/* ABOUT US */}
+        <Typography sx={{fontWeight: 'bold', fontSize: 50, textAlign: 'center', mt: 10,}}>About Us</Typography>
+        <Typography sx={{p: 2, mb: 15, mx: 5, textAlign: 'left',}}>{about_us}</Typography>
 
 
-      {/* CONTACT INFORMATION */}
-      <ContactUs></ContactUs>
+        {/* SERVICES */}
+        <Typography sx={{fontSize: 50, fontWeight: 'bold', textAlign: 'center', mt:5}}>Services</Typography>
+        <Typography sx={{textAlign: 'center'}}>100% Satisfaction Guaranteed</Typography>
 
-  </Box>
+        <Services></Services>
+
+
+        {/* CONTACT INFORMATION */}
+        <ContactUs></ContactUs>
+
+    </Box>
+  </ThemeProvider>
   );
 }
