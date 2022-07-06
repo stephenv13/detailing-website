@@ -51,7 +51,7 @@ on:
 
 env:
   PROJECT_ID: griggs-detailing # TODO: update Google Cloud project id
-  GAR_LOCATION: us-central1-docker.pkg.dev/griggs-detailing/griggs-detailing # TODO: update Artifact Registry location
+  GAR_LOCATION: us-central1 # TODO: update Artifact Registry location
   SERVICE: griggs-detailing # TODO: update Cloud Run service name
   REGION: us-central1 # TODO: update Cloud Run service region
 
@@ -95,7 +95,6 @@ jobs:
 
       - name: Build and Push Container
         run: |-
-          gcloud -q auth configure-docker us-central1-docker.pkg.dev
           docker build -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}" ./
           docker push "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}"
 
