@@ -2,10 +2,10 @@ FROM node:14 AS build
 
 WORKDIR /app
 
-COPY package*.json .
+COPY package*.json ./
 RUN npm ci
 
-COPY package-lock.json package.json ./
+COPY ./ ./
 # Builds files in server/
 RUN npm run build
 
