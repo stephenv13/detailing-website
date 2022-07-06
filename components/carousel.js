@@ -15,7 +15,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Carousel() {
         return (
-            <Paper elevation={0} sx={{mx: 5, mt: 1}}>
+          <Paper elevation={0} sx={{mx: 5, mt: 1}}>
             <Swiper
               spaceBetween={30}
               centeredSlides={true}
@@ -32,30 +32,30 @@ export default function Carousel() {
             >
   
               <SwiperSlide>
-                <Image src={'/4runner.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+                <Image src={'/4runner.jpg'} width={6048/8} height={4032/8} alt='image here'></Image>
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={'/DirtySeats.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+                <Image src={'/DirtySeats.jpg'} width={6048/8} height={4032/8} alt='image here'></Image>
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={'/DirtySeats2.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+                <Image src={'/DirtySeats2.jpg'} width={6048/8} height={4032/8} alt='image here'></Image>
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={'/DogHair.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+                <Image src={'/DogHair.jpg'} width={6048/8} height={4032/8} alt='image here'></Image>
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={'/MercedesExterior.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+                <Image src={'/MercedesExterior.jpg'} width={6048/8} height={4032/8} alt='image here'></Image>
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={'/MercedesInterior.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+                <Image src={'/MercedesInterior.jpg'} width={6048/8} height={4032/8} alt='image here'></Image>
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={'/MercedesTires.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+                <Image src={'/MercedesTires.jpg'} width={6048/8} height={4032/8} alt='image here'></Image>
               </SwiperSlide>
               <SwiperSlide>
-                <Image src={'/Rav4.jpg'} width={6048/6} height={4032/6} alt='image here'></Image>
+                <Image src={'/Rav4.jpg'} width={6048/8} height={4032/8} alt='image here'></Image>
               </SwiperSlide>
             </Swiper>   
-          </Paper> 
+          </Paper>
         );
 }

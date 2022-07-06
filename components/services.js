@@ -26,12 +26,12 @@ export default function Services() {
                                     
                                     <CardContent className='cardText'>
                                         <LocalCarWashIcon className='carIcon' sx={{fontSize: 60,}}></LocalCarWashIcon>
-                                        <Typography sx={{fontSize: 30, fontWeight: 'bold'}}>{service.service_name}</Typography>
+                                        <Typography sx={{fontSize: 25, fontWeight: 'bold'}}>{service.service_name}</Typography>
                                         <Typography sx={{fontSize: 15, fontWeight: 'bold'}}>{service.completion_time} Hours to Complete</Typography>
-                                        <Typography sx={{ fontSize: 15 }} color="text.secondary" gutterBottom> <br></br>This package includes:</Typography>
+                                        <Typography sx={{fontSize: 15}} gutterBottom> <br></br>This package includes:</Typography>
 
 
-                                        <ul style={{display:'inline-block', textAlign: 'left'}}>
+                                        <ul style={{fontSize: 15, display:'inline-block', textAlign: 'left'}}>
                                             {service.includes.map((action, i) => {
                                                 return <li key={i}>{action}</li>
 
@@ -43,7 +43,7 @@ export default function Services() {
                                     </CardContent>
                                     <CardActions sx={{mt: 'auto', mb: 2, justifyContent: 'center'}}>
                                         <Stack>
-                                        <Typography sx={{fontWeight: 'bold', mb: 2}}>Starting Price: {service.price}</Typography>
+                                        <Typography sx={{fontSize: 15, fontWeight: 'bold', mb: 2}}>Starting Price: {service.price}</Typography>
                                         {/* <Button variant='contained'>Schedule Now</Button> */}
                                         <ServiceFormModal serviceName = {service.service_name}></ServiceFormModal>
                                         </Stack>

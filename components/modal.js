@@ -6,7 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { Grid, Typography, MenuItem, Select, InputLabel, FormControl, Alert, AlertTitle, Snackbar, IconButton } from '@mui/material';
+import { Grid, Typography, MenuItem, Select, InputLabel, FormControl, Alert, AlertTitle, Snackbar, IconButton, createTheme } from '@mui/material';
 
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -23,6 +23,15 @@ const formValues = {
   year: "",
   comments: ""
 };
+
+const theme = createTheme({
+  palette: {
+    custom: {
+      // Purple and green play nicely together.
+      main: '#1c2541',
+    }
+  },
+});
 
 export default function ServiceFormModal({serviceName}) {
 
@@ -338,8 +347,8 @@ export default function ServiceFormModal({serviceName}) {
         </Grid>
 
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button variant= 'contained' onClick={Submit} type='submit'>Submit</Button>
+          <Button className='cancelButton' onClick={handleClose}>Cancel</Button>
+          <Button className='submitButton' variant= 'contained' onClick={Submit} type='submit'>Submit</Button>
         </DialogActions>
       </Dialog>
       

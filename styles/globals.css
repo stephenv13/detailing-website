@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Helvetica', 'Arial', sans-serif;
-  background-color: #fff;
+  background-color: #efefef;
   scroll-behavior: smooth;
 
   --swiper-navigation-color: #1c2541;
@@ -29,8 +29,12 @@ a {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
-.serviceButton {
+.serviceButton, .submitButton {
   background-color: #1c2541;
+}
+
+.cancelButton {
+  color: #1c2541;
 }
 
 .emailIcon, .phoneIcon, .carIcon {
@@ -47,7 +51,7 @@ a {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #efefef;
 
   /* Center slide text vertically */
   display: -webkit-box;
