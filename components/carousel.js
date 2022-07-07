@@ -1,5 +1,5 @@
 import {Paper} from '@mui/material'
-import Image from 'next/dist/client/image';
+import Image from 'next/image';
 
 // SWIPER CAROUSEL
 // Import Swiper React components
