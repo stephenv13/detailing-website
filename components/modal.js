@@ -172,7 +172,7 @@ export default function ServiceFormModal({serviceName}) {
 
   return (
     <div>
-      <Button className='serviceButton' variant="contained" onClick={handleClickOpen}>Request Service</Button>
+      <Button className='serviceButton' variant="contained" onClick={handleClickOpen} sx={{backgroundColor: '#1c2541'}}>Request Service</Button>
 
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle sx={{fontWeight: 'bold'}}>Request Service: {serviceName}</DialogTitle>
@@ -347,8 +347,8 @@ export default function ServiceFormModal({serviceName}) {
         </Grid>
 
         <DialogActions>
-          <Button className='cancelButton' onClick={handleClose}>Cancel</Button>
-          <Button className='submitButton' variant= 'contained' onClick={Submit} type='submit'>Submit</Button>
+          <Button className='cancelButton' onClick={handleClose} sx={{color: '#1c2541'}}>Cancel</Button>
+          <Button className='submitButton' variant= 'contained' onClick={Submit} type='submit' sx={{backgroundColor: '#1c2541'}}>Submit</Button>
         </DialogActions>
       </Dialog>
       

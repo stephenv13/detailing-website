@@ -40,7 +40,7 @@ export default function Home() {
       <Box sx={{ flexGrow: 1}} className='homePage'>
 
         {/* HOME PAGE NAV BAR */}
-        <AppBar position="static" className='appbar'>
+        <AppBar position="static" className='appbar' sx={{backgroundColor: '#1c2541'}}>
           <Toolbar>
             <LocalCarWashIcon sx={{fontSize: 40}}></LocalCarWashIcon>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>Grigg&apos;s Detailing</Typography>
