@@ -14,7 +14,7 @@ import ContactUs from '../components/contact_us';
 
 export default function Home() {
 
-  const about_us = "Welcome to Grigg's Detailing! We are a solo-run, local detailing start-up based in Newark, Ohio. "
+  const about_us = "Welcome to Griggs' Detailing! We are a solo-run, local detailing start-up based in Newark, Ohio. "
     + "We offer a variety of services from interior details and exterior details to clay and paint sealants. "
     + "Check out our current service offerings below!"
   
@@ -43,7 +43,7 @@ export default function Home() {
         <AppBar position="static" className='appbar' sx={{backgroundColor: '#1c2541'}}>
           <Toolbar>
             <LocalCarWashIcon sx={{fontSize: 40}}></LocalCarWashIcon>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>Grigg&apos;s Detailing</Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>Griggs' Detailing</Typography>
             <Button sx={{ fontWeight: 'bold'}} color="inherit" onClick= {scrollToContact}>Contact Us</Button>
           </Toolbar>
         </AppBar>
