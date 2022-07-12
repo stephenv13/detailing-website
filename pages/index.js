@@ -43,7 +43,7 @@ export default function Home() {
         <AppBar position="static" className='appbar' sx={{backgroundColor: '#1c2541'}}>
           <Toolbar>
             <LocalCarWashIcon sx={{fontSize: 40}}></LocalCarWashIcon>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>Griggs' Detailing</Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>Griggs&apos; Detailing</Typography>
             <Button sx={{ fontWeight: 'bold'}} color="inherit" onClick= {scrollToContact}>Contact Us</Button>
           </Toolbar>
         </AppBar>
