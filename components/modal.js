@@ -12,8 +12,6 @@ import CloseIcon from '@mui/icons-material/Close';
 
 import emailjs from '@emailjs/browser'
 
-import transactions from '../pages/api/transactions';
-
 // forms start with blank default values
 const formValues = {
   firstName: "",
