@@ -151,6 +151,25 @@ export default function ServiceFormModal({serviceName}) {
        console.log('FAILED...', error);
     });
 
+    // data to be passed to the api request
+    var data = {
+      service_name: serviceName,
+      first_name: formValues.firstName,
+      last_name: formValues.lastName,
+      email: formValues.email,
+      phone: formValues.phone,
+      make: formValues.make,
+      model: formValues.model,
+      year: formValues.year,
+      comments: formValues.comments
+    }
+
+    fetch('../api/transactions', {
+      method: 'POST',
+      headers: new Headers({'Content-Type': 'application/json'}),
+      body: JSON.stringify(data)
+    });
+
     resetValues();
   };
 
