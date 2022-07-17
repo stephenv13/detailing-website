@@ -29,15 +29,18 @@ export default async (req, res) => {
     if (method === "POST") {
       const { body } = req;
       let transaction = {
-        date: "1/2/22",
-        service: "external",
-        first_name: "Ty",
-        last_name: "Roop",
-        email: "blah@gmail.com",
-        make: "ford",
-        model: "mustang",
-        year: "2022"
+        date: new Date().toUTCString(),
+        service: body.service_name,
+        first_name: body.first_name,
+        last_name: body.last_name,
+        email: body.email,
+        phone: body.phone,
+        make: body.make,
+        model: body.model,
+        year: body.year,
+        comments: body.comments
       }
+
       const add = await addDoc(dbInstance, transaction)
       return res.status(200).json(add);
     }
